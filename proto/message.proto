@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package message;
+
+option go_package = "/";
+
+// Define el servicio gRPC
+service MessageService {
+    rpc SendMessage(MessageRequest) returns (MessageResponse);
+}
+
+// Mensaje de solicitud enviado por el cliente
+message MessageRequest {
+    string message = 1;
+}
+
+// Mensaje de respuesta enviado por el servidor
+message MessageResponse {
+    string reply = 1;
+}
